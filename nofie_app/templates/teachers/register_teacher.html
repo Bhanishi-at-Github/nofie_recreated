@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<main>
+
+
+    <form method="post">
+
+        {% csrf_token %}
+
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="text-center">Register Teacher</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="first_name">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="email">Department</label>
+                        <input type="text" class="form-control" id="department" name="department" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-3">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="phone">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container p-3">
+
+            <div class="col-md-12">
+                <button type="submit">Register</button>
+            </div>
+        </div>
+        </div>
+
+
+
+    </form>
+
+</main>
+
+
+
+{% endblock %}

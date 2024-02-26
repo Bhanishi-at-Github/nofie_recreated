@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">Teachers</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="{% url 'register_teacher' %}" class="btn btn-primary">Register Teacher</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for teacher in teachers %}
+                        <tr>
+                            <td>{{ teacher.name }}</td>
+                            <td>{{ teacher.department }}</td>
+                            <td>{{ teacher.email }}</td>
+
+                            <td>
+                                <a href="{% url 'delete_teacher' teacher.id %}" class="btn btn-danger">Delete</a>
+                            
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+{% endblock %}

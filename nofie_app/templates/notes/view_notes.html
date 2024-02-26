@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<main>
+    <br>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>View Notes</h1>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <a href="{% url 'notes' %}" class="btn btn-primary">Upload Notes</a>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Code</th>
+                                <th>Description</th>
+                                <th>Subject</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for note in notes %}
+                            <tr>
+                                <td>{{ note.title }}</td>
+                                <td>{{ note.code }}</td>
+                                <td>{{ note.description }}</td>
+                                <td>{{ note.subject }}</td>
+
+                                <td>
+                                    <a href="{% url 'delete_note' note.id %}" class="btn btn-danger">Delete</a>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </section>
+
+</main>
+
+{% endblock %}
